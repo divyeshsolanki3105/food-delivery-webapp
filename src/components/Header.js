@@ -12,8 +12,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
 import { DLT } from "../redux/Action/action";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {
+
+  // const { loginWithRedirect } = useAuth0();
 
   const[price,setPrice]=useState(0);
   console.log(price);
@@ -52,15 +55,16 @@ const Header = () => {
     <div>
       <Navbar bg="dark" variant="dark" style={{ height: "60px" }}>
         <Container>
-          <NavLink to="/" className="text-decoration-none text-light mx-3">
+          <NavLink to="/cpage" className="text-decoration-none text-light mx-3">
             Add to Cart
           </NavLink>
           <Nav className="me-auto">
-            <NavLink to="/" className="text-decoration-none text-light">
+            <NavLink to="/cpage" className="text-decoration-none text-light">
               Home
             </NavLink>
+            {/* <button onClick={() => loginWithRedirect()}>Log In</button> */}
           </Nav>
-
+          
           <Badge
             badgeContent={getdata.length}
             color="primary"
